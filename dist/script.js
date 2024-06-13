@@ -14549,7 +14549,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
 /* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/forms */ "./src/js/modules/forms.js");
 /* harmony import */ var _modules_changeModalState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/changeModalState */ "./src/js/modules/changeModalState.js");
-/* harmony import */ var _modules_changeModalState__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_changeModalState__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
+
 
 
 
@@ -14559,12 +14560,14 @@ window.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   let modalState = {};
-  _modules_changeModalState__WEBPACK_IMPORTED_MODULE_4___default()(modalState);
+  let deadline = '2024-08-01';
+  Object(_modules_changeModalState__WEBPACK_IMPORTED_MODULE_4__["default"])(modalState);
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
-  Object(_modules_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_modules_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(modalState);
+  Object(_modules_timer__WEBPACK_IMPORTED_MODULE_5__["default"])('.container1', deadline);
 });
 
 /***/ }),
@@ -14573,10 +14576,56 @@ window.addEventListener('DOMContentLoaded', () => {
 /*!********************************************!*\
   !*** ./src/js/modules/changeModalState.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/mikhey93/Desktop/Irvas/src/js/modules/changeModalState.js: Unexpected token, expected \":\" (23:9)\n\n\u001b[0m \u001b[90m 21 |\u001b[39m          \u001b[36mif\u001b[39m (item\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'type'\u001b[39m) \u001b[33m===\u001b[39m \u001b[32m'checkbox'\u001b[39m) {\n \u001b[90m 22 |\u001b[39m             i \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m \u001b[33m?\u001b[39m state[prop] \u001b[33m=\u001b[39m \u001b[32m'[jkjlyjt'\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m          } \u001b[36melse\u001b[39m {\n \u001b[90m    |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m            console\u001b[33m.\u001b[39mlog(\u001b[32m'input'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m          }\n \u001b[90m 26 |\u001b[39m          \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at constructor (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:351:19)\n    at Parser.raise (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:3281:19)\n    at Parser.unexpected (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:3301:16)\n    at Parser.expect (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:3605:28)\n    at Parser.parseConditional (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10415:12)\n    at Parser.parseMaybeConditional (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10408:17)\n    at Parser.parseMaybeAssign (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10365:21)\n    at Parser.parseExpressionBase (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10319:23)\n    at /Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10315:39\n    at Parser.allowInAnd (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:11952:16)\n    at Parser.parseExpression (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10315:17)\n    at Parser.parseStatementContent (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12393:23)\n    at Parser.parseStatementLike (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12260:17)\n    at Parser.parseStatementListItem (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12240:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12817:61)\n    at Parser.parseBlockBody (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12810:10)\n    at Parser.parseBlock (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12798:10)\n    at Parser.parseStatementContent (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12350:21)\n    at Parser.parseStatementLike (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12260:17)\n    at Parser.parseStatementOrSloppyAnnexBFunctionDeclaration (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12250:17)\n    at Parser.parseIfStatement (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12628:28)\n    at Parser.parseStatementContent (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12289:21)\n    at Parser.parseStatementLike (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12260:17)\n    at Parser.parseStatementListItem (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12240:17)\n    at Parser.parseSwitchStatement (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12672:36)\n    at Parser.parseStatementContent (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12293:21)\n    at Parser.parseStatementLike (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12260:17)\n    at Parser.parseStatementListItem (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12240:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12817:61)\n    at Parser.parseBlockBody (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12810:10)\n    at Parser.parseBlock (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:12798:10)\n    at Parser.parseFunctionBody (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:11637:24)\n    at Parser.parseArrowExpression (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:11612:10)\n    at Parser.parseParenAndDistinguishExpression (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:11228:12)\n    at Parser.parseExprAtom (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10874:23)\n    at Parser.parseExprSubscripts (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10607:23)\n    at Parser.parseUpdate (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10590:21)\n    at Parser.parseMaybeUnary (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10568:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10422:61)\n    at Parser.parseExprOps (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10427:23)\n    at Parser.parseMaybeConditional (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10404:23)\n    at Parser.parseMaybeAssign (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10365:21)\n    at /Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10335:39\n    at Parser.allowInAnd (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:11957:12)\n    at Parser.parseMaybeAssignAllowIn (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10335:17)\n    at Parser.parseExprListItem (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:11717:18)\n    at Parser.parseCallExpressionArguments (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10793:22)\n    at Parser.parseCoverCallAndAsyncArrowHead (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10710:29)\n    at Parser.parseSubscript (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10647:19)\n    at Parser.parseSubscripts (/Users/mikhey93/Desktop/Irvas/node_modules/@babel/parser/lib/index.js:10620:19)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _checkNumInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./checkNumInputs */ "./src/js/modules/checkNumInputs.js");
+
+const changeModalState = state => {
+  const windowForm = document.querySelectorAll('.balcon_icons_img'),
+    windowWidth = document.querySelectorAll('#width'),
+    windowHeight = document.querySelectorAll('#height'),
+    windowType = document.querySelectorAll('#view_type'),
+    windowProfile = document.querySelectorAll('.checkbox');
+  Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('#width');
+  Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('#height');
+  function bindActionToElems(event, elem, prop) {
+    elem.forEach((item, i) => {
+      item.addEventListener(event, () => {
+        switch (item.nodeName) {
+          case 'SPAN':
+            state[prop] = i;
+            break;
+          case 'INPUT':
+            if (item.getAttribute('type') === 'checkbox') {
+              i === 0 ? state[prop] = 'Холодное' : state[prop] = 'Теплое';
+              elem.forEach((box, j) => {
+                box.checked = false;
+                if (i == j) {
+                  box.checked = true;
+                }
+              });
+            } else {
+              state[prop] = item.value;
+            }
+            break;
+          case 'SELECT':
+            state[prop] = item.value;
+            break;
+        }
+      });
+    });
+  }
+  ;
+  bindActionToElems('click', windowForm, 'form');
+  bindActionToElems('input', windowHeight, 'height');
+  bindActionToElems('input', windowWidth, 'width');
+  bindActionToElems('change', windowType, 'type');
+  bindActionToElems('change', windowProfile, 'profile');
+};
+/* harmony default export */ __webpack_exports__["default"] = (changeModalState);
 
 /***/ }),
 
@@ -14618,7 +14667,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const forms = () => {
+const forms = state => {
   const form = document.querySelectorAll('form'),
     inputs = document.querySelectorAll('input');
   Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_2__["default"])('input[name="user_phone"]');
@@ -14647,6 +14696,11 @@ const forms = () => {
       statusMessage.classList.add('status');
       item.appendChild(statusMessage);
       const formData = new FormData(item);
+      if (item.getAttribute('data-calc') === 'end') {
+        for (let key in state) {
+          formData.append(key, state[key]);
+        }
+      }
       postData('assets/server.php', formData).then(res => {
         console.log(res);
         statusMessage.textContent = message.success;
@@ -14766,6 +14820,70 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (tabs);
+
+/***/ }),
+
+/***/ "./src/js/modules/timer.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/timer.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_internals_task__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/internals/task */ "./node_modules/core-js/internals/task.js");
+/* harmony import */ var core_js_internals_task__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_internals_task__WEBPACK_IMPORTED_MODULE_0__);
+
+const timer = (id, deadline) => {
+  const addZero = num => {
+    if (num <= 9) {
+      return '0' + num;
+    } else {
+      return num;
+    }
+  };
+  const getTimeRemaining = endtime => {
+    const t = Date.parse(endtime) - Date.parse(new Date()),
+      seconds = Math.floor(t / 1000) % 60,
+      minutes = Math.floor(t / 1000 / 60 % 60),
+      hours = Math.floor(t / (1000 * 60 * 60) % 24),
+      days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'days': days,
+      'total': t,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  };
+  const setClock = (selector, endtime) => {
+    const timer = document.querySelector(selector),
+      days = timer.querySelector('#days'),
+      hours = document.querySelector('#hours'),
+      minutes = document.querySelector('#minutes'),
+      seconds = document.querySelector('#seconds'),
+      timeInterval = setInterval(updateClock, 1000);
+    updateClock();
+    function updateClock() {
+      const t = getTimeRemaining(endtime);
+      days.textContent = addZero(t.days);
+      hours.textContent = addZero(t.hours);
+      minutes.textContent = addZero(t.minutes);
+      seconds.textContent = addZero(t.seconds);
+      if (t.total <= 0) {
+        days.textContent = '00';
+        hours.textContent = '00';
+        minutes.textContent = '00';
+        seconds.textContent = '00';
+        clearInterval(timeInterval);
+      }
+    }
+    ;
+  };
+  setClock(id, deadline);
+};
+/* harmony default export */ __webpack_exports__["default"] = (timer);
 
 /***/ }),
 
